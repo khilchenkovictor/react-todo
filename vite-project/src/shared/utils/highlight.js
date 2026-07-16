@@ -5,11 +5,10 @@ const escapeHTML = (unsafeString) => {
         .replaceAll(/>/g, '&gt;' )
         .replaceAll(/"/g, '&quot;' )
         .replaceAll(/'/g, '&#39;' )
-
 }
 
 const escapeRegExp = (unsafeString) => {
-    return unsafeString.replace()
+    return unsafeString.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
 export const highlightCaseInsensitive = (text, query) => {
